@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Capaz Chile - Juntos por la Inclusión</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Un fondo claro y suave */
+            color: #343a40; /* Color de texto principal oscuro */
+        }
+        .hero-section {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Degradado vibrante */
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Fondo+Abstracto') no-repeat center center/cover; /* Imagen abstracta de fondo */
+            opacity: 0.1; /* Opacidad para el efecto de superposición */
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        .btn-primary {
+            background-color: #007bff; /* Azul primario para botones */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+        }
+        .section-title {
+            color: #343a40;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .footer {
+            background-color: #212529; /* Fondo oscuro para el pie de página */
+            color: #adb5bd; /* Color de texto claro para el pie de página */
+        }
+        .social-icon {
+            color: #adb5bd;
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado (Header) -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo de la Fundación -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/6a11cb/FFFFFF?text=Logo" alt="Logo Fundación Capaz Chile" class="rounded-full">
+                <span class="text-2xl font-bold text-gray-800">Fundación Capaz Chile</span>
+            </a>
+
+            <!-- Navegación Principal -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Inicio</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Nosotros</a>
+                <a href="#programas" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Programas</a>
+                <a href="#impacto" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Impacto</a>
+                <a href="#redes-sociales" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Redes Sociales</a>
+                <a href="#contacto" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contacto</a>
+                <a href="#donar" class="btn-primary text-sm">Donar</a>
+            </nav>
+
+            <!-- Menú hamburguesa para móviles -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 shadow-lg">
+            <nav class="flex flex-col space-y-2">
+                <a href="#inicio" class="text-gray-700 hover:text-blue-600 font-medium py-1">Inicio</a>
+                <a href="#nosotros" class="text-gray-700 hover:text-blue-600 font-medium py-1">Nosotros</a>
+                <a href="#programas" class="text-gray-700 hover:text-blue-600 font-medium py-1">Programas</a>
+                <a href="#impacto" class="text-gray-700 hover:text-blue-600 font-medium py-1">Impacto</a>
+                <a href="#redes-sociales" class="text-gray-700 hover:text-blue-600 font-medium py-1">Redes Sociales</a>
+                <a href="#contacto" class="text-gray-700 hover:text-blue-600 font-medium py-1">Contacto</a>
+                <a href="#donar" class="btn-primary text-sm mt-2 text-center">Donar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero (Inicio) -->
+    <section id="inicio" class="hero-section py-20 md:py-32 text-center">
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Creando un Mundo de <span class="text-yellow-300">Oportunidades</span> para Todos
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                En Fundación Capaz Chile, trabajamos incansablemente para promover la inclusión y mejorar la calidad de vida de las personas con discapacidad.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#programas" class="btn-primary bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg">
+                    Conoce Nuestros Programas
+                </a>
+                <a href="#donar" class="btn-primary bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-3 rounded-full shadow-lg">
+                    Cómo Ayudar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl section-title">Nuestra Misión y Visión</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://placehold.co/600x400/d1d5db/4b5563?text=Equipo+de+la+Fundación" alt="Equipo de la Fundación" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">
+                        En Fundación Capaz Chile, nos dedicamos a construir una sociedad más justa e inclusiva. Nuestra misión es empoderar a las personas con discapacidad, brindándoles las herramientas y el apoyo necesarios para desarrollar su máximo potencial y participar plenamente en la comunidad.
+                    </p>
+                    <p class="mb-4">
+                        Visualizamos un futuro donde las barreras sean derribadas, las oportunidades sean equitativas y cada individuo sea valorado por sus capacidades únicas. A través de programas innovadores y alianzas estratégicas, trabajamos para hacer de esta visión una realidad.
+                    </p>
+                    <p>
+                        Creemos firmemente en el poder de la comunidad y la colaboración para generar un cambio significativo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Programas/Servicios -->
+    <section id="programas" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl section-title">Nuestros Programas Clave</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Programa 1 -->
+                <div class="card p-6 text-center">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13.5m0-13.5c-4.142 0-7.5 3.13-7.5 7s3.358 7 7.5 7 7.5-3.13 7.5-7-3.358-7-7.5-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Educación Inclusiva</h3>
+                    <p class="text-gray-600">
+                        Apoyamos la integración de estudiantes con discapacidad en entornos educativos regulares, proporcionando recursos y capacitación.
+                    </p>
+                </div>
+
+                <!-- Tarjeta de Programa 2 -->
+                <div class="card p-6 text-center">
+                    <div class="text-green-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.012-8.755-2.745M9 6H4c-1.105 0-2 .895-2 2v4a2 2 0 002 2h.555M21 12v2a2 2 0 01-2 2h-2.555M16 6h5l-1.5 6H16"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Empleabilidad Asistida</h3>
+                    <p class="text-gray-600">
+                        Fomentamos la inserción laboral, ofreciendo capacitación, intermediación y seguimiento para un empleo digno.
+                    </p>
+                </div>
+
+                <!-- Tarjeta de Programa 3 -->
+                <div class="card p-6 text-center">
+                    <div class="text-purple-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 100 4m-3 13.5a9.5 9.5 0 110-19 9.5 9.5 0 010 19z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Vida Independiente</h3>
+                    <p class="text-gray-600">
+                        Promovemos la autonomía a través de talleres de habilidades para la vida diaria y apoyo a la vivienda.
+                    </p>
+                </div>
+
+                <!-- Tarjeta de Programa 4 -->
+                <div class="card p-6 text-center">
+                    <div class="text-red-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Salud y Bienestar</h3>
+                    <p class="text-gray-600">
+                        Facilitamos el acceso a servicios de salud especializados y actividades que promueven el bienestar físico y mental.
+                    </p>
+                </div>
+
+                <!-- Tarjeta de Programa 5 -->
+                <div class="card p-6 text-center">
+                    <div class="text-yellow-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2c0-.653-.141-1.28-.4-1.857m0 0a5.002 5.002 0 00-9.2 0M5 20h5v-2a3 3 0 01-5.356-1.857M5 20v-2c0-.653.141-1.28.4-1.857m0 0a5.002 5.002 0 01-9.2 0"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Participación Comunitaria</h3>
+                    <p class="text-gray-600">
+                        Organizamos eventos y actividades que fomentan la interacción social y la participación activa en la comunidad.
+                    </p>
+                </div>
+
+                <!-- Tarjeta de Programa 6 -->
+                <div class="card p-6 text-center">
+                    <div class="text-orange-600 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Asesoría y Orientación</h3>
+                    <p class="text-gray-600">
+                        Ofrecemos apoyo legal, psicológico y social a personas con discapacidad y sus familias.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Impacto/Testimonios -->
+    <section id="impacto" class="py-16 md:py-24 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl section-title text-white">Nuestro Impacto: Historias que Inspiran</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-blue-700 p-8 rounded-xl shadow-lg">
+                    <p class="text-lg italic mb-4">
+                        "Gracias a Fundación Capaz Chile, mi hijo pudo acceder a la educación que siempre soñó. Su apoyo ha sido fundamental para nuestra familia."
+                    </p>
+                    <p class="font-semibold text-right">- María G., Madre</p>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="bg-blue-700 p-8 rounded-xl shadow-lg">
+                    <p class="text-lg italic mb-4">
+                        "Encontré un empleo digno y adapté a mis capacidades. La fundación me dio la confianza y las herramientas para lograrlo."
+                    </p>
+                    <p class="font-semibold text-right">- Juan P., Beneficiario</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="btn-primary bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg">
+                    Ver Más Historias
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Redes Sociales -->
+    <section id="redes-sociales" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl section-title">Síguenos en Redes Sociales</h2>
+            <p class="text-lg text-center mb-10 max-w-2xl mx-auto text-gray-700">
+                Mantente al día con nuestras últimas actividades, eventos y noticias. ¡Conéctate con nosotros!
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Placeholder para post de Instagram 1 -->
+                <a href="#" target="_blank" class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x400/9ca3af/ffffff?text=Post+1" alt="Publicación de Instagram 1" class="w-full h-auto object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">#Inclusión #Capacidades #FundacionCapazChile</p>
+                    </div>
+                </a>
+                <!-- Placeholder para post de Instagram 2 -->
+                <a href="#" target="_blank" class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x400/a78bfa/ffffff?text=Post+2" alt="Publicación de Instagram 2" class="w-full h-auto object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">#Voluntariado #Comunidad #Chile</p>
+                    </div>
+                </a>
+                <!-- Placeholder para post de Instagram 3 -->
+                <a href="#" target="_blank" class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x400/fcd34d/ffffff?text=Post+3" alt="Publicación de Instagram 3" class="w-full h-auto object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">#EducacionInclusiva #Desarrollo</p>
+                    </div>
+                </a>
+                <!-- Placeholder para post de Instagram 4 -->
+                <a href="#" target="_blank" class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x400/6ee7b7/ffffff?text=Post+4" alt="Publicación de Instagram 4" class="w-full h-auto object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">#ImpactoSocial #HistoriasQueInspiran</p>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-12 flex flex-wrap justify-center gap-6">
+                <a href="https://www.instagram.com/fundacioncapazchile" target="_blank" class="btn-primary bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-semibold flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.493 2.164c2.567 0 2.87.01 3.885.056 1.006.046 1.76.205 2.402.478.66.288 1.226.69 1.785 1.24.56.55 .957 1.115 1.244 1.774.275.642.434 1.396.48 2.403.047 1.015.056 1.318.056 3.886s-.01 2.87-.056 3.885c-.046 1.006-.205 1.76-.478 2.402-.288.66-.69 1.226-1.24 1.785-.55.56-.1115.957-1.774 1.244-.642.275-1.396.434-2.403.48-.015.047-1.318.056-3.886.056s-2.87-.01-3.885-.056c-1.006-.046-1.76-.205-2.402-.478-.66-.288-1.226-.69-1.785-1.24-.56-.55-.957-1.115-1.244-1.774-.275-.642-.434-1.396-.48-2.403-.047-1.015-.056-1.318-.056-3.886s.01-2.87.056-3.885c.046-1.006.205-1.76.478-2.402.288.66.69-1.226 1.24-1.785.55-.56.957-1.115 1.774-1.244.642-.275 1.396-.434 2.403-.48 1.015-.047 1.318-.056 3.886-.056Zm0-2.164c-2.673 0-3.003.01-4.06.059-1.119.051-1.855.234-2.51.517-.726.315-1.341.766-1.957 1.382-.616.616-1.067 1.231-1.382 1.957-.283.655-.466 1.39-.517 2.51-.049 1.057-.059 1.387-.059 4.06s.01 3.003.059 4.06c.051 1.119.234 1.855.517 2.51.315.726.766 1.341 1.382 1.957.616.616 1.231 1.067 1.957 1.382.655.283 1.39.466 2.51.517 1.057.049 1.387.059 4.06.059s3.003-.01 4.06-.059c1.119-.051 1.855-.234 2.51-.517.726-.315 1.341-.766 1.957-1.382.616-.616 1.067-1.231 1.382-1.957-.283-.655-.466-1.39-.517-2.51-.049-1.057-.059-1.387-.059-4.06s-.01-3.003-.059-4.06c-.051-1.119-.234-1.855-.517-2.51-.315-.726-.766-1.341-1.382-1.957-.616-.616-1.231-1.067-1.957-1.382-.655-.283-1.39-.466-2.51-.517-1.057-.049-1.387-.059-4.06-.059ZM12 16.793a4.793 4.793 0 1 1 0-9.586 4.793 4.793 0 0 1 0 9.586Z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/fundacioncapazchile" target="_blank" class="btn-primary bg-blue-700 hover:bg-blue-800 px-6 py-3 rounded-full font-semibold flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://twitter.com/fundacioncapazchile" target="_blank" class="btn-primary bg-blue-400 hover:bg-blue-500 px-6 py-3 rounded-full font-semibold flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                    </svg>
+                    <span>Twitter/X</span>
+                </a>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-8">
+                Nota: Para una integración en tiempo real de los posts de Instagram, se requeriría el uso de la API de Instagram y desarrollo adicional. Estas imágenes son solo ejemplos visuales.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Apoyo/Donar -->
+    <section id="donar" class="py-16 md:py-24 bg-gradient-to-r from-green-500 to-teal-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Tu Apoyo Hace la Diferencia</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Cada contribución nos permite seguir transformando vidas y construyendo un futuro más inclusivo.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="btn-primary bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg">
+                    Donar Ahora
+                </a>
+                <a href="#" class="btn-primary bg-transparent border-2 border-white hover:bg-white hover:text-green-600 font-semibold px-8 py-3 rounded-full shadow-lg">
+                    Otras Formas de Ayudar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl section-title">Contáctanos</h2>
+            <div class="flex flex-col md:flex-row md:space-x-12 items-start">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <p class="text-lg mb-6">
+                        ¿Tienes preguntas, sugerencias o quieres saber más sobre nuestra labor? No dudes en contactarnos.
+                    </p>
+                    <div class="space-y-4 text-gray-700">
+                        <p class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Calle Ficticia 123, Ciudad, País
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9.5l-2.555 1.555A1.5 1.5 0 007.5 12.055v2.79a2 2 0 00.674 1.66L14 21h2a2 2 0 002-2v-2.79a1.5 1.5 0 00-.674-1.66L13.5 10.5l1.555-2.555a1 1 0 01.684-.948H19a2 2 0 012 2v3.28a1 1 0 01-.684.948L14.5 10.5l-1.555 2.555A1.5 1.5 0 0012.055 15.5h-2.79a2 2 0 00-1.66-.674L3 14z"></path>
+                            </svg>
+                            +123 456 7890
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            info@fundacioncapazchile.org
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <form class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu Nombre">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="tu.email@ejemplo.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensaje:</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu mensaje..."></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button type="submit" class="btn-primary bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="footer py-12">
+        <div class="container mx-auto px-4 text-center md:flex md:justify-between md:items-center">
+            <div class="mb-6 md:mb-0">
+                <p>&copy; 2025 Fundación Capaz Chile. Todos los derechos reservados.</p>
+                <p class="text-sm mt-2">Construyendo un futuro inclusivo.</p>
+            </div>
+            <div class="flex justify-center md:justify-end space-x-6">
+                <a href="#" class="social-icon hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.493 2.164c2.567 0 2.87.01 3.885.056 1.006.046 1.76.205 2.402.478.66.288 1.226.69 1.785 1.24.56.55 .957 1.115 1.244 1.774.275.642.434 1.396.48 2.403.047 1.015.056 1.318.056 3.886s-.01 2.87-.056 3.885c-.046 1.006-.205 1.76-.478 2.402-.288.66-.69 1.226-1.24 1.785-.55.56-.1115.957-1.774 1.244-.642.275-1.396.434-2.403.48-.015.047-1.318.056-3.886.056s-2.87-.01-3.885-.056c-1.006-.046-1.76-.205-2.402-.478-.66-.288-1.226-.69-1.785-1.24-.56-.55-.957-1.115-1.244-1.774-.275-.642-.434-1.396-.48-2.403-.047-1.015-.056-1.318-.056-3.886s.01-2.87.056-3.885c.046-1.006.205-1.76.478-2.402.288.66.69-1.226 1.24-1.785.55-.56.957-1.115 1.774-1.244.642-.275 1.396-.434 2.403-.48 1.015-.047 1.318-.056 3.886-.056Zm0-2.164c-2.673 0-3.003.01-4.06.059-1.119.051-1.855.234-2.51.517-.726.315-1.341.766-1.957 1.382-.616.616-1.067 1.231-1.382 1.957-.283.655-.466 1.39-.517 2.51-.049 1.057-.059 1.387-.059 4.06s.01 3.003.059 4.06c.051 1.119.234 1.855.517 2.51.315.726.766 1.341 1.382 1.957.616.616 1.231 1.067 1.957 1.382.655.283 1.39.466 2.51.517 1.057.049 1.387.059 4.06.059s3.003-.01 4.06-.059c1.119-.051 1.855-.234 2.51-.517.726-.315 1.341-.766 1.957-1.382.616-.616 1.067-1.231 1.382-1.957-.283-.655-.466-1.39-.517-2.51-.049-1.057-.059-1.387-.059-4.06s-.01-3.003-.059-4.06c-.051-1.119-.234-1.855-.517-2.51-.315-.726-.766-1.341-1.382-1.957-.616-.616-1.231-1.067-1.957-1.382-.655-.283-1.39-.466-2.51-.517-1.057-.049-1.387-.059-4.06-.059ZM12 16.793a4.793 4.793 0 1 1 0-9.586 4.793 4.793 0 0 1 0 9.586Z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica para el menú móvil
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
